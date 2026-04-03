@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+JP:wght@300;400;700&display=swap');
+
+/* ══════════════════════════════════════════════════════
+   HUNTER × HUNTER · GREED ISLAND  —  Design Tokens
+══════════════════════════════════════════════════════ */
+
+/* ── DARK MODE (default) ─────────────────────────────── */
+:root {
+  color-scheme: dark;
+
+  /* Surfaces */
+  --bg:        #07050e;
+  --surface-1: #100d1a;
+  --surface-2: #1a1630;
+  --surface-3: #221d3a;
+
+  /* Accent — Red (Hunter Association / primary interactive) */
+  --accent:       #e52222;
+  --accent-dim:   rgba(229, 34, 34, 0.14);
+  --accent-glow:  rgba(229, 34, 34, 0.28);
+  --accent-light: #ff4444;
+
+  /* Blue — Killua */
+  --blue:     #1a8fe3;
+  --blue-dim: rgba(26, 143, 227, 0.14);
+
+  /* Teal — Greed Island */
+  --teal:     #00c8aa;
+  --teal-dim: rgba(0, 200, 170, 0.12);
+
+  /* Text */
+  --text:       #f0ead8;
+  --text-dim:   rgba(240, 234, 216, 0.62);
+  --text-muted: rgba(240, 234, 216, 0.30);
+
+  /* Borders — white-based for dark bg */
+  --border:        rgba(255, 255, 255, 0.07);
+  --border-mid:    rgba(255, 255, 255, 0.14);
+  --border-bright: rgba(255, 255, 255, 0.32);
+
+  /* Title glow (white on dark) */
+  --title-color: #f0ead8;
+  --title-glow:  rgba(240, 234, 216, 0.15);
+
+  /* Header / panel backgrounds */
+  --header-bg:  rgba(10, 7, 18, 0.97);
+  --banner-bg:  rgba(10, 7, 18, 0.97);
+  --overlay-bg: rgba(4, 3, 9, 0.90);
+  --panel-bg:   rgba(22, 18, 40, 0.99);
+  --art-bg-top: rgba(24, 20, 44, 0.85);
+  --art-bg-bot: rgba(10, 7, 18, 0.95);
+
+  /* Stripe / grid texture colors */
+  --stripe: rgba(255, 255, 255, 0.015);
+  --grid:   rgba(255, 255, 255, 0.022);
+
+  /* Ambient glow blobs on body */
+  --glow-a: rgba(229,  34,  34, 0.07);   /* red  */
+  --glow-b: rgba( 26, 143, 227, 0.06);   /* blue */
+  --glow-c: rgba(  0, 200, 170, 0.04);   /* teal */
+
+  /* ── Typography ── */
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-ui:      'Rajdhani', sans-serif;
+  --font-body:    'EB Garamond', serif;
+  --font-jp:      'Noto Sans JP', sans-serif;
+
+  font-family: var(--font-ui);
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--text);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── LIGHT MODE ──────────────────────────────────────── */
+[data-theme="light"] {
+  color-scheme: light;
+
+  --bg:        #f4efe8;
+  --surface-1: #ffffff;
+  --surface-2: #f0ecf5;
+  --surface-3: #e6e1f0;
+
+  --accent:       #c41414;
+  --accent-dim:   rgba(196, 20, 20, 0.10);
+  --accent-glow:  rgba(196, 20, 20, 0.22);
+  --accent-light: #e52222;
+
+  --blue:     #0d6ab8;
+  --blue-dim: rgba(13, 106, 184, 0.12);
+
+  --teal:     #009980;
+  --teal-dim: rgba(0, 153, 128, 0.12);
+
+  --text:       #1a1530;
+  --text-dim:   rgba(26, 21, 48, 0.62);
+  --text-muted: rgba(26, 21, 48, 0.36);
+
+  --border:        rgba(26, 21, 48, 0.09);
+  --border-mid:    rgba(26, 21, 48, 0.18);
+  --border-bright: rgba(26, 21, 48, 0.40);
+
+  --title-color: #c41414;
+  --title-glow:  rgba(196, 20, 20, 0.20);
+
+  --header-bg:  rgba(255, 255, 255, 0.96);
+  --banner-bg:  rgba(255, 255, 255, 0.97);
+  --overlay-bg: rgba(244, 239, 232, 0.90);
+  --panel-bg:   rgba(255, 255, 255, 0.99);
+  --art-bg-top: rgba(240, 235, 228, 0.90);
+  --art-bg-bot: rgba(232, 228, 220, 0.95);
+
+  --stripe: rgba(26, 21, 48, 0.022);
+  --grid:   rgba(26, 21, 48, 0.045);
+
+  --glow-a: rgba(196,  20,  20, 0.05);
+  --glow-b: rgba( 13, 106, 184, 0.04);
+  --glow-c: rgba(  0, 153, 128, 0.03);
+}
+
+/* ── Reset ───────────────────────────────────────────── */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html,
+body,
+#root { width: 100%; height: 100%; }
+
+html { overflow: hidden; }
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow: hidden;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 75% 55% at 18%  8%,  var(--glow-a), transparent),
+    radial-gradient(ellipse 60% 45% at 82% 88%,  var(--glow-b), transparent),
+    radial-gradient(ellipse 45% 45% at 55% 40%,  var(--glow-c), transparent);
+  transition: background-color 300ms ease;
+}
+
+/* Diagonal stripe */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 32px,
+      var(--stripe) 32px,
+      var(--stripe) 33px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Fine grid */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 58px 58px;
+  mask-image: radial-gradient(ellipse 80% 70% at center, black 20%, transparent 75%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+button, input, select { font: inherit; }
+a { color: inherit; }
+img { display: block; max-width: 100%; }
